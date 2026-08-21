@@ -457,13 +457,13 @@ img {
 .proprietor-showcase-wrap {
   display: flex;
   justify-content: center;
-  padding: 20px 10px;
+  padding: 12px 10px 20px;
 }
 
 .popout-3d-stage {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 430px;
   transition: transform 0.4s ease;
 }
 
@@ -488,7 +488,7 @@ img {
 .popout-img-box {
   position: relative;
   z-index: 2;
-  height: 420px;
+  height: 480px;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 16px 32px rgba(12, 35, 64, 0.35);
@@ -504,34 +504,37 @@ img {
 }
 
 .popout-info-card {
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 88%;
-  background: #ffffff;
-  padding: 16px 14px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  border-bottom: 4px solid var(--accent-amber);
+  position: relative;
   z-index: 3;
+  width: calc(100% - 28px);
+  margin: -24px auto 0;
+  background: #ffffff;
+  padding: 18px 20px 16px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--accent-amber);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  align-items: center;
 }
 
 .popout-info-card .badge-role {
-  display: inline-block;
+  display: block;
+  grid-row: span 2;
   background: var(--primary-navy);
   color: var(--accent-amber);
   font-weight: 800;
   font-size: 0.78rem;
   padding: 3px 12px;
   border-radius: 50px;
-  margin-bottom: 6px;
+  margin-bottom: 0;
   letter-spacing: 1px;
 }
 
 .popout-info-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   color: var(--primary-navy);
   margin-bottom: 2px;
 }
@@ -587,6 +590,7 @@ img {
 .crusher-integrated-wrapper {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
+  border-top: 4px solid var(--primary-navy);
   border-radius: 14px;
   padding: 45px;
   box-shadow: var(--shadow-md);
@@ -720,9 +724,13 @@ img {
   display: flex;
   gap: 45px;
   align-items: center;
-  margin-bottom: 75px;
-  padding-bottom: 60px;
-  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 38px;
+  padding: 36px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-top: 4px solid var(--primary-navy);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
 }
 
 .work-row-reverse {
@@ -1207,7 +1215,7 @@ img {
 /* ================= Clients Section ================= */
 .clients-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-bottom: 25px;
 }
@@ -1215,14 +1223,14 @@ img {
 .client-logo-card {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
-  padding: 22px 12px;
+  padding: 24px 18px 20px;
   border-radius: var(--radius);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 130px;
+  min-height: 158px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
@@ -1239,12 +1247,12 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
+  height: 72px;
 }
 
 .logo-box img {
-  max-height: 44px;
-  max-width: 130px;
+  max-height: 68px;
+  max-width: 190px;
   object-fit: contain;
 }
 
