@@ -50,12 +50,18 @@ function initImageErrorHandlers() {
 }
 
 /* Lightbox Pop-up Modal */
+let lightboxHistoryEntry = false;
+
 function openLightbox(src, captionText) {
   const modal = document.getElementById('lightboxModal');
   const modalImg = document.getElementById('lightboxImg');
   const caption = document.getElementById('lightboxCaption');
 
   if (modal && modalImg && caption) {
+    if (!modal.classList.contains('active')) {
+      window.history.pushState({ lightboxOpen: true }, '', window.location.href);
+      lightboxHistoryEntry = true;
+    }
     modalImg.src = src;
     caption.textContent = captionText;
     modal.classList.add('active');
@@ -63,15 +69,27 @@ function openLightbox(src, captionText) {
   }
 }
 
-function closeLightbox() {
+function closeLightbox(fromHistory = false) {
   const modal = document.getElementById('lightboxModal');
   const modalImg = document.getElementById('lightboxImg');
   if (modal) {
+    if (!fromHistory && lightboxHistoryEntry) {
+      window.history.back();
+      return;
+    }
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
     if (modalImg) modalImg.src = '';
+    lightboxHistoryEntry = false;
   }
 }
+
+window.addEventListener('popstate', () => {
+  const modal = document.getElementById('lightboxModal');
+  if (modal && modal.classList.contains('active')) {
+    closeLightbox(true);
+  }
+});
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
@@ -113,8 +131,8 @@ async function handleFormSubmit(e) {
     // If running offline or without Formspree account yet, still provide friendly feedback
     status.style.color = '#16a34a';
     status.textContent = 'Thank you! Your inquiry was recorded. Please call +91 9270057005 / 9766700005 for immediate equipment dispatch.';
-    form.reset();
   } finally {
+    form.reset();
     submitBtn.disabled = false;
     submitBtn.textContent = 'Send Inquiry';
   }

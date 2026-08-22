@@ -28,7 +28,7 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
-  font-size: 16.5px;
+  font-size: 15px;
   color: var(--text-dark);
   background-color: var(--bg-white);
   line-height: 1.7;
@@ -238,7 +238,7 @@ img {
 }
 
 .main-heading {
-  font-size: 2.35rem;
+  font-size: 2.25rem;
   font-weight: 800;
   color: var(--primary-navy);
 }
@@ -291,7 +291,7 @@ img {
 }
 
 .hero-title {
-  font-size: 3.1rem;
+  font-size: 3rem;
   font-weight: 900;
   line-height: 1.22;
   margin-bottom: 20px;
