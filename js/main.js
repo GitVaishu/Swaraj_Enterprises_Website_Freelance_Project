@@ -1,5 +1,5 @@
 /**
- * Swaraj Enterprises - Interactive Navigation, Form Submission & Lightbox
+ * Swaraj Enterprises - Interactive Navigation, Form Submission & Lightbox.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
